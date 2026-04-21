@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Losowanie SDM — Nowy klient</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="logo">K</span>
+      <div class="titles">
+        <div class="h1">Losowanie SDM</div>
+        <div class="sub">Przydział „Nowy klient” → właściciel</div>
+      </div>
+    </div>
+    <div class="right">
+      <span class="pill" id="counter">Losowań: 0</span>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="card hero">
+      <div class="label">NOWY KLIENT</div>
+
+      <div class="result" id="result">
+        <div class="name">—</div>
+        <div class="meta">Kliknij „Losuj”, aby wylosować SDM</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" id="draw">🎲 Losuj</button>
+        <button class="btn" id="copy">Kopiuj wynik</button>
+      </div>
+
+      <div class="options">
+        <label class="check">
+          <input type="checkbox" id="noRepeats" checked />
+          Bez powtórek (dopóki nie wylosujesz wszystkich)
+        </label>
+        <label class="check">
+          <input type="checkbox" id="sound" />
+          Dźwięk kliknięcia (opcjonalnie)
+        </label>
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="card">
+        <div class="sectionTitle">Lista SDM (1 linia = 1 osoba)</div>
+        <textarea id="people" spellcheck="false"></textarea>
+        <div class="row">
+          <button class="btn ghost" id="loadDefault">Wstaw obecną listę</button>
+          <button class="btn ghost danger" id="resetPool">Reset puli</button>
+        </div>
+        <div class="hint">
+          Tip: Możesz wkleić listę z Teams/Excel — byle każda osoba była w osobnej linii.
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="sectionTitle">Historia losowań</div>
+        <ol class="history" id="history"></ol>
+        <div class="row">
+          <button class="btn ghost" id="exportTxt">Eksportuj do TXT</button>
+          <button class="btn ghost danger" id="clearHistory">Wyczyść historię</button>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <span>Styl: Corporate Minimal</span>
+      <span class="muted">Działa offline • Dane zapisywane lokalnie w przeglądarce</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
